@@ -1,0 +1,30 @@
+body {
+    background-image: url("img/bg.jpg");
+    background-size: cover;
+    height:100%;
+    color: #FFF;
+}
+
+html {
+    height:100%;
+}
+
+#container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#panel {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+}
+
+#canvas1 {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
