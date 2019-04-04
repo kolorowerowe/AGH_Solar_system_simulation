@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <title>Solar System Simulation</title>
 
-    <script type="text/javascript" src="src/first.js"></script>
+    <meta name="description" content="Projekt zaliczeniowy na przedmiot Symulacja Dyskretnych Systemów Złożonych (SDSZ) ">
+    <meta name="author" content="Borowy Szymon, Kołodziej Dominik, Kozak Marcin">
+
     <link rel="stylesheet" href="src/mainStyle.css">
     <link rel="shortcut icon" href="src/img/icon.ico">
-
 </head>
 <body>
 
     <div id="container">
-        <canvas id="canvas1" width="100%" height="80%"></canvas>
+        <canvas id="canvas1"></canvas>
+        <script type="text/javascript" src="src/first.js"></script>
+
+        <!-- In Panel will be every information abouut Planets and configuration of everything -->
         <div id="panel">
             <h1>Panel </h1>
-            <button onclick="drawClock()">Narysuj coś</button>
+            <button onclick="draw()">Narysuj coś</button>
+            <button onclick="clearEverything()">Wyczyść</button>
         </div>
     </div>
+
 </body>
 </html>

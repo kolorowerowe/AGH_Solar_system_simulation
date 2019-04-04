@@ -1,5 +1,5 @@
 body {
-    background-image: url("img/bg.jpg");
+    background-image: url("img/bg.png");
     background-size: cover;
     height:100%;
     color: #FFF;
@@ -7,6 +7,7 @@ body {
 
 html {
     height:100%;
+    overflow-y: hidden;     /* disable scroll*/
 }
 
 #container {
@@ -20,11 +21,15 @@ html {
     position: fixed;
     top: 10px;
     left: 10px;
-
+    border-radius: 25px;
+    border: 2px solid #FFFFFF;
+    padding: 10px;
 }
 
 #canvas1 {
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+    z-index: -1;        /* canvas at the bottom*/
+    position:absolute;
+    left:0;
+    top:0;
+    width: available;
 }

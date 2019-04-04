@@ -1,16 +1,76 @@
+var canvas = document.getElementById("canvas1");
 
-
-function drawClock() {
-
-    var canvas = document.getElementById("canvas1");
-    console.log(canvas);
-    var ctx = canvas.getContext("2d");
-    var radius = canvas.height / 4;
-    ctx.translate(radius, radius);
-    radius = radius * 0.90;
-
-    ctx.arc(0, 0, radius, 0 , 2 * Math.PI);
-    ctx.fillStyle = "white";
-    ctx.fill();
-    console.log("rys");
+resizeCanvas();             // resize canvas to 100% of the window
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
+
+var ctx = canvas.getContext("2d"),
+    cw = canvas.width,
+    ch = canvas.height;
+
+function draw() {
+
+    // Sun
+    circle(20,"yellow",cw/2,ch/2);    // x and y are 0 because ctx is in the middle of canvas
+
+
+}
+
+function clearEverything() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function circle(radius,color,x,y){
+    ctx.beginPath();
+    ctx.fillStyle = color;
+    ctx.arc(x,y,radius,0,2*Math.PI);
+    ctx.fill();
+    ctx.closePath();
+}
+
+
+
+
+/*
+Additional links, which should be use in bibliography:
+
+1.  https://www.html5canvastutorials.com/advanced/html5-canvas-animated-solar-system/
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
