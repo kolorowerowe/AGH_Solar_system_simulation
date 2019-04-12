@@ -1,8 +1,13 @@
 body {
+    font-family: Montserrat;
     background-image: url("img/bg.png");
     background-size: cover;
     height:100%;
     color: #FFF;
+}
+
+#h2_panel{
+    margin-top: 5px;
 }
 
 html {
@@ -21,7 +26,7 @@ html {
     position: fixed;
     top: 10px;
     left: 10px;
-    border-radius: 25px;
+    border-radius: 15px;
     border: 2px solid #FFFFFF;
     padding: 10px;
 }

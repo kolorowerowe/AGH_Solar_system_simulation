@@ -18,9 +18,21 @@
 
         <!-- In Panel will be every information abouut Planets and configuration of everything -->
         <div id="panel">
-            <h1>Panel </h1>
+            <h2 id="h2_panel">Panel </h2>
             <button onclick="draw()">Narysuj coś</button>
             <button onclick="clearEverything()">Wyczyść</button>
+            <br/>
+            <p>
+                Aktualny czas: <div id="czas">0</div>
+            </p>
+            <br/>
+            <input type="range" id="time_slider" name="cowbell"
+                   min="1" max="50" value="1" step="1" onchange="changeTimeGain()"  oninput="changeTimeGain()">
+            <div id="time_gain">1x</div>
+            <br/>
+            <button onclick="start()">Start</button>
+            <button onclick="pause()">Pauza</button>
+            <button onclick="reset()">Reset</button>
         </div>
     </div>
 
