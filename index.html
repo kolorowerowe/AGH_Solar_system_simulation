@@ -15,8 +15,6 @@
     <div id="container">
         <canvas id="canvas1"></canvas>
 
-        <script type="text/javascript" src="src/objects.js"></script>
-        <script type="text/javascript" src="src/main.js"></script>
 
         <!-- In Panel will be every information abouut Planets and configuration of everything -->
         <div id="panel">
@@ -25,7 +23,10 @@
             <button onclick="clearEverything()">Wyczyść</button>
             <br/>
             <p>
-                Aktualny czas: <div id="czas">0</div>
+                Aktualny upływ: <div id="czas">0</div>
+            </p>
+            <p>
+                Aktualna data: <div id="data">0</div>
             </p>
             <br/>
             <input type="range" id="time_slider" name="cowbell"
@@ -35,6 +36,11 @@
             <button onclick="start()">Start</button>
             <button onclick="pause()">Pauza</button>
             <button onclick="reset()">Reset</button>
+
+
+            <script type="text/javascript" src="src/objects.js"></script>
+            <script type="text/javascript" src="src/main.js"></script>
+
         </div>
     </div>
 

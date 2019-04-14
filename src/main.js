@@ -1,12 +1,21 @@
+/*      main      */
+
 var canvas = document.getElementById("canvas1");
+
+
 var time=0;
+//month gets value from 0 to 11
+//.getTime() returns in milisec
+var date_init = new Date(2019, 3, 14, 12, 0, 0, 0).getTime();
+var date_mili = date_init;
 var running = false;
 var timeout=1000;
-resizeCanvas(); // resize canvas to 100% of the window
 
+resizeCanvas(); // resize canvas to 100% of the window
+writeDate();
 var interval = setInterval('loop()',timeout);
 
-
+/*    end of main    */
 
 
 
@@ -19,16 +28,24 @@ var ctx = canvas.getContext("2d"),
     cw = canvas.width,
     ch = canvas.height;
 
+function writeDate() {
+    document.getElementById("czas").innerHTML = time;
+    document.getElementById("data").innerHTML = getDateString(date_mili);
+}
 
+function getDateString(milisec){
+    var date = new Date(milisec);
+    return date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+}
 
 function start(){
     running = true;
-    document.getElementById("czas").innerHTML= time;
+    writeDate();
 }
 
 function pause() {
     running = false;
-    document.getElementById("czas").innerHTML= time;
+
 }
 
 function changeTimeGain() {
@@ -45,12 +62,12 @@ function reset() {
 
     running = false;
     time = 0;
+    date_mili = date_init;
     interval = setInterval('loop()', timeout);
 
+    writeDate();
     document.getElementById("time_slider").value = 1;
-    document.getElementById("czas").innerHTML= time;
     document.getElementById("time_gain").innerHTML= "1x";
-
 
 }
 
@@ -58,7 +75,8 @@ function loop() {
 
     if (running) {
         time++;
-        document.getElementById("czas").innerHTML = time;
+        date_mili += (24*60*60*1000);
+        writeDate();
     }
 }
 
