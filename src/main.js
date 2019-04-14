@@ -6,6 +6,10 @@ resizeCanvas(); // resize canvas to 100% of the window
 
 var interval = setInterval('loop()',timeout);
 
+
+
+
+
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -29,7 +33,6 @@ function pause() {
 
 function changeTimeGain() {
     var gain = document.getElementById("time_slider").value;
-    console.log(gain);
     clearInterval(interval);
     timeout = 1000/gain;
     interval = setInterval('loop()', timeout);
@@ -49,8 +52,6 @@ function reset() {
     document.getElementById("time_gain").innerHTML= "1x";
 
 
-
-
 }
 
 function loop() {
@@ -63,8 +64,9 @@ function loop() {
 
 function draw() {
 
-    // Sun
-    circle(20,"yellow",cw/2,ch/2);    // x and y are 0 because ctx is in the middle of canvas
+    for (let item of objects) {
+        circle(item.radius, item.color, cw / 2 + item.x , ch / 2 + item.y);
+    }
 
 }
 
