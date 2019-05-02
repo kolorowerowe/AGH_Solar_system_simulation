@@ -10,12 +10,12 @@ var date_init = new Date(2019, 3, 14, 12, 0, 0, 0).getTime();
 var date_mili = date_init;
 var running = false;
 var timeout=1000;
+var timeout_draw=10;
 
 resizeCanvas(); // resize canvas to 100% of the window
 writeDate();
 var interval = setInterval('loop()',timeout);
-
-var drawinterval = setInterval('draw()',60); //jak to pozmieniasz to siê "fajniej" Ziemi bêdzie krêciæ xD
+var interval_draw = setInterval('draw()',timeout_draw); 
 
 /*    end of main    */
 
@@ -25,7 +25,7 @@ function resizeCanvas() {
     canvas.height = window.innerHeight;
 }
 
-// Czy tego nie mo¿na daæ wy¿ej? Zawrzeæ w main'ie? @Dominik
+// Czy tego poni¿ej  nie mo¿na daæ wy¿ej? Zawrzeæ w main'ie? @Dominik
 var ctx = canvas.getContext("2d"),
     cw = canvas.width,
     ch = canvas.height;
@@ -56,7 +56,6 @@ function start(){
 
 function pause() {
     running = false;
-
 }
 
 function changeTimeGain() {
@@ -71,7 +70,7 @@ function reset() {
     timeout = 1000;
     clearInterval(interval);
     
-    ctx.clearRect(0, 0, canvas.width, canvas.height); //wyczyœæ canvasa
+    clearEverything(); //wyczyœæ wszystko
     ctx.restore(); //przywróc initial state- ³¹czy sie z ctx.save()
     ctx.save(); //zapiszmy ponownie do kolejnego reseta
     for(let item of objects)
@@ -82,6 +81,8 @@ function reset() {
             
             circle(item.radius, item.color,item.x ,item.y); //uk³ad wspó³rzêdnych jest na œrodku strony!
         }
+    for(let i=0;i<10;i++)
+    {rotates[i]=0;} // rotates trzyma obroty planet (ile siê dotychczas obróci³a)
 
     running = false;
     time = 0;
@@ -104,17 +105,34 @@ function loop() {
 }
 
 
+//--------- Marcin'a
+let rotates = [0,0,0,0,0,0,0,0,0]; //9 rotates bo 9 planet (no powiedzmy 9) RUCH OBIEGOWY
+var i = 0; //"iterator" potrzebny do rotates
+//---------
+
 function draw()
-{   if(running){
-      
-      ctx.clearRect(0, 0, canvas.width, canvas.height); //wyczyœæ canvase-> nie chcemy ¿eby planeta zostawia³a œlad (przynajmniej na razie xD)
+{   if(running)
+    {
       var gain = document.getElementById("time_slider").value;
+      ctx.save()
+      clearEverything(); //wyczyœæ canvas-> nie chcemy ¿eby planeta zostawia³a œlad (przynajmniej na razie xD)
+      ctx.restore();
+      i=0;
       for (let item of objects)
       {
-          ctx.rotate((2*Math.PI/360)*gain);// obracam uk³ad wspórzêdnych (bêdzie trochê inne ale na razie niech siedzi- obrót bêdzie zale¿ny od planety)
-          circle(item.radius, item.color,item.x ,item.y);
+        if(item.name!="Sun")
+        {
+          ctx.save(); //zapisz stan canvas
+          var przes = (2*Math.PI*gain/(item.circle_time*100)); //o ile siê w tej klatce przesunie? Ma na to wp³yw circle_time i iloœæ ?klatek na sekundê?
+          ctx.rotate(rotates[i]+przes);// obracam uk³ad wspórzêdnych
+          circle(item.radius, item.color,item.x ,item.y); // rysujemy
+          rotates[i]+=przes; //zmieniamy przesuniêcie w tablicy
+          ctx.restore(); //przywracamy oryginalny uk³ad uk³adu wspó³rzêdnych
+        }
+        else //a S³onko po prostu narysuj
+        {circle(item.radius, item.color,item.x ,item.y);}
+        i=i+1;
       }
-      //var drawInterwal = setInterval('draw()',timeout);
     }
 }
 
@@ -144,36 +162,3 @@ Additional links, which should be use in bibliography:
 
 
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
