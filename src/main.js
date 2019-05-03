@@ -10,13 +10,12 @@ var date_init = new Date(2019, 3, 14, 12, 0, 0, 0).getTime();
 var date_mili = date_init;
 var running = false;
 var timeout=1000;
-var timeout_draw=10;
+var timeout_draw=10; // nie zmieniaj, pliska xD Marcin
 
 resizeCanvas(); // resize canvas to 100% of the window
 writeDate();
 var interval = setInterval('loop()',timeout);
 var interval_draw = setInterval('draw()',timeout_draw); 
-
 /*    end of main    */
 
 
@@ -66,6 +65,8 @@ function changeTimeGain() {
     document.getElementById("time_gain").innerHTML= gain+"x";
 }
 
+
+
 function reset() {
     timeout = 1000;
     clearInterval(interval);
@@ -93,6 +94,7 @@ function reset() {
     document.getElementById("time_slider").value = 1;
     document.getElementById("time_gain").innerHTML= "1x";
 
+
 }
 
 function loop() {
@@ -113,6 +115,8 @@ var i = 0; //"iterator" potrzebny do rotates
 function draw()
 {   if(running)
     {
+      //ctx.strokeStyle("red");
+      
       var gain = document.getElementById("time_slider").value;
       ctx.save()
       clearEverything(); //wyczyœæ canvas-> nie chcemy ¿eby planeta zostawia³a œlad (przynajmniej na razie xD)
@@ -126,12 +130,17 @@ function draw()
           var przes = (2*Math.PI*gain/(item.circle_time*100)); //o ile siê w tej klatce przesunie? Ma na to wp³yw circle_time i iloœæ ?klatek na sekundê?
           ctx.rotate(rotates[i]+przes);// obracam uk³ad wspórzêdnych
           circle(item.radius, item.color,item.x ,item.y); // rysujemy
+          planet_arc(item);
+          ctx.fillText(item.name,item.x,item.y);
           rotates[i]+=przes; //zmieniamy przesuniêcie w tablicy
           ctx.restore(); //przywracamy oryginalny uk³ad uk³adu wspó³rzêdnych
         }
         else //a S³onko po prostu narysuj
         {circle(item.radius, item.color,item.x ,item.y);}
+        if(rotates[i]%item.circle_time==0){rotates[i]=0;} //ogranicza ¿e nie bêdzie mega du¿ych cyfr w tablicy- od 0 do item.circle_time
         i=i+1;
+        
+          
       }
     }
 }
@@ -144,6 +153,7 @@ function clearEverything() {
     
 }
 
+
 function circle(radius,color,x,y){
     ctx.beginPath();
     ctx.fillStyle = color;
@@ -152,7 +162,38 @@ function circle(radius,color,x,y){
     ctx.closePath();
 }
 
+function planet_arc(planet)
+{
+    ctx.strokeStyle = planet.color;
+    ctx.beginPath();
+    ctx.arc(0,0,planet.x, 0, 2*Math.PI*0.9,true);
+    ctx.stroke();
+}
 
+function jump()
+{
+    if(running)
+    {
+        //poda³ ile dni skoczyæ do przodu
+        var skok_string = document.getElementById("skok").value;
+        var skok = parseInt(skok_string, 10);
+        
+        time+=skok;
+        date_mili+=skok*(24*60*60*1000);
+    
+        //!!! below
+        i=0;
+        for(let item of objects)
+        {
+            if(item.name!="Sun")
+            {
+                rotates[i]+=(skok*100)*(2*Math.PI/(item.circle_time*100));
+            }
+            i+=1;
+        }
+        //draw();
+    }
+}
 
 
 /*
