@@ -1,9 +1,8 @@
 /*      main      */
 
-var canvas = document.getElementById("canvas1");
-
-
+let canvas = document.getElementById("canvas1");
 var time=0;
+
 //month gets value from 0 to 11
 //.getTime() returns in milisec
 var date_init = new Date(2019, 3, 14, 12, 0, 0, 0).getTime();
@@ -12,17 +11,13 @@ var running = false;
 var timeout=1000;
 var timeout_draw=10; // nie zmieniaj, pliska xD Marcin
 
-resizeCanvas(); // resize canvas to 100% of the window
+// resize canvas to 100% of the window
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
 writeDate();
 var interval = setInterval('loop()',timeout);
-var interval_draw = setInterval('draw()',timeout_draw); 
-/*    end of main    */
-
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
+var interval_draw = setInterval('draw()',timeout_draw);
 
 // Czy tego poni¿ej  nie mo¿na daæ wy¿ej? Zawrzeæ w main'ie? @Dominik
 var ctx = canvas.getContext("2d"),
@@ -30,7 +25,9 @@ var ctx = canvas.getContext("2d"),
     ch = canvas.height;
     ctx.translate(cw/2,ch/2); //Do rotacji mi jest potrzebne- przemieszczam œrodek uk³adu na œrodek strony
     ctx.save(); //potrzebne do resetu
-//end zawarcia w main'ie
+
+/*    end of main    */
+
 
 function writeDate() {
     document.getElementById("czas").innerHTML = time;
@@ -38,12 +35,12 @@ function writeDate() {
 }
 
 function getDateString(milisec){
-    var date = new Date(milisec);
-    var month = date.getMonth()+1;
-    var day_of_month = date.getDate()
+    let date = new Date(milisec);
+    let month = date.getMonth()+1;
+    let day_of_month = date.getDate();
     
     if(month<10) month = "0" + month;
-    if(day_of_month<10) day_of_month = "0" +day_of_month
+    if(day_of_month<10) day_of_month = "0" +day_of_month;
     
     return date.getFullYear() + "-" + month + "-" + day_of_month;
 }
@@ -58,7 +55,7 @@ function pause() {
 }
 
 function changeTimeGain() {
-    var gain = document.getElementById("time_slider").value;
+    let gain = document.getElementById("time_slider").value;
     clearInterval(interval);
     timeout = 1000/gain;
     interval = setInterval('loop()', timeout);
@@ -75,15 +72,11 @@ function reset() {
     ctx.restore(); //przywróc initial state- ³¹czy sie z ctx.save()
     ctx.save(); //zapiszmy ponownie do kolejnego reseta
     for(let item of objects)
-        {
-            item.x=item.initx; //pocz¹tkowe po³o¿enie
-            item.y=item.inity;
-            item.z=item.initz;
-            
-            circle(item.radius, item.color,item.x ,item.y); //uk³ad wspó³rzêdnych jest na œrodku strony!
-        }
-    for(let i=0;i<10;i++)
-    {rotates[i]=0;} // rotates trzyma obroty planet (ile siê dotychczas obróci³a)
+    {
+        item.x=item.initx; //pocz¹tkowe po³o¿enie
+        item.rotate=item.init_rotate;
+        circle(item.radius, item.color,item.x ,0); //uk³ad wspó³rzêdnych jest na œrodku strony!
+    }
 
     running = false;
     time = 0;
@@ -106,40 +99,33 @@ function loop() {
     }
 }
 
-
-//--------- Marcin'a
-let rotates = [0,0,0,0,0,0,0,0,0]; //9 rotates bo 9 planet (no powiedzmy 9) RUCH OBIEGOWY
-var i = 0; //"iterator" potrzebny do rotates
-//---------
-
 function draw()
 {   if(running)
     {
       //ctx.strokeStyle("red");
       
-      var gain = document.getElementById("time_slider").value;
-      ctx.save()
+      let gain = document.getElementById("time_slider").value;
+      ctx.save();
       clearEverything(); //wyczyœæ canvas-> nie chcemy ¿eby planeta zostawia³a œlad (przynajmniej na razie xD)
       ctx.restore();
-      i=0;
+      //i=0;
       for (let item of objects)
       {
-        if(item.name!="Sun")
+        if(item.name !== "Sun")
         {
           ctx.save(); //zapisz stan canvas
-          var przes = (2*Math.PI*gain/(item.circle_time*100)); //o ile siê w tej klatce przesunie? Ma na to wp³yw circle_time i iloœæ ?klatek na sekundê?
-          ctx.rotate(rotates[i]+przes);// obracam uk³ad wspórzêdnych
-          circle(item.radius, item.color,item.x ,item.y); // rysujemy
+          let przes = (2*Math.PI*gain/(item.circle_time*100)); //o ile siê w tej klatce przesunie? Ma na to wp³yw circle_time i iloœæ ?klatek na sekundê?
+          ctx.rotate(item.rotate+przes);// obracam uk³ad wspórzêdnych
+          circle(item.radius, item.color,item.x ,0); // rysujemy
           planet_arc(item);
-          ctx.fillText(item.name,item.x,item.y);
-          rotates[i]+=przes; //zmieniamy przesuniêcie w tablicy
+          ctx.fillText(item.name,item.x,0);
+          item.rotate+=przes; //zmieniamy przesuniêcie w tablicy
           ctx.restore(); //przywracamy oryginalny uk³ad uk³adu wspó³rzêdnych
         }
         else //a S³onko po prostu narysuj
-        {circle(item.radius, item.color,item.x ,item.y);}
-        if(rotates[i]%item.circle_time==0){rotates[i]=0;} //ogranicza ¿e nie bêdzie mega du¿ych cyfr w tablicy- od 0 do item.circle_time
-        i=i+1;
-        
+        {circle(item.radius, item.color,item.x ,0);}
+
+        if(item.rotate % item.circle_time === 0){item.rotate=0;} //ogranicza ¿e nie bêdzie mega du¿ych cyfr w tablicy- od 0 do item.circle_time
           
       }
     }
@@ -175,23 +161,20 @@ function jump()
     if(running)
     {
         //poda³ ile dni skoczyæ do przodu
-        var skok_string = document.getElementById("skok").value;
-        var skok = parseInt(skok_string, 10);
+        let skok_string = document.getElementById("skok").value;
+        let skok = parseInt(skok_string, 10);
         
         time+=skok;
         date_mili+=skok*(24*60*60*1000);
     
         //!!! below
-        i=0;
         for(let item of objects)
         {
-            if(item.name!="Sun")
+            if(item.name !== "Sun")
             {
-                rotates[i]+=(skok*100)*(2*Math.PI/(item.circle_time*100));
+                item.rotate+=(skok*100)*(2*Math.PI/(item.circle_time*100));
             }
-            i+=1;
         }
-        //draw();
     }
 }
 

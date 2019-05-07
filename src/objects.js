@@ -12,11 +12,9 @@ let sun = {
     "circle_time": 0,
     "spin_time": 0,
     "initx": 0, //potrzebne do resetu
-    "inity": 0,
-    "initz": 0,
     "x": 0,
-    "y": 0,
-    "z": 0
+    "init_rotate": 0,
+    "rotate": 0
 };
 let mercury = {
     "name": "Mercury",
@@ -25,11 +23,9 @@ let mercury = {
     "circle_time": 87,
     "spin_time": 58,
     "initx": distance_scale*0.3871, //potrzebne do resetu
-    "inity": 0,
-    "initz": 80,
-    "x": distance_scale*0.3871,
-    "y": 0,
-    "z": 80
+    "x": 0,
+    "init_rotate": 20/360*2*3.14,
+    "rotate": 0
 };
 let venus = {
     "name": "Venus",
@@ -38,11 +34,9 @@ let venus = {
     "circle_time": 224,
     "spin_time": 243,
     "initx": distance_scale*0.7233, //potrzebne do resetu
-    "inity": 0,
-    "initz": 80,
-    "x": distance_scale*0.7233,
-    "y": 0,
-    "z": 80
+    "x": 0,
+    "init_rotate": 20/360*2*3.14,
+    "rotate": 0
 };
 let earth = {
     "name": "Earth",
@@ -51,11 +45,9 @@ let earth = {
     "circle_time": 365.25,
     "spin_time": 24,
     "initx": distance_scale, //potrzebne do resetu
-    "inity": 0,
-    "initz": 80,
-    "x": distance_scale,
-    "y": 0,
-    "z": 80
+    "x": 0,
+    "init_rotate": 110/360*2*3.14,
+    "rotate": 0
 };
 let mars = {
     "name": "Mars",
@@ -64,11 +56,9 @@ let mars = {
     "circle_time": 686,
     "spin_time": 24,
     "initx": distance_scale*1.5237, //potrzebne do resetu
-    "inity": 0,
-    "initz": 80,
-    "x": distance_scale*1.5237,
-    "y": 0,
-    "z": 80
+    "x": 0,
+    "init_rotate": 250/360*2*3.14,
+    "rotate": 0
 };
 let jupiter = {
     "name": "Jupiter",
@@ -77,11 +67,9 @@ let jupiter = {
     "circle_time": 4333,
     "spin_time": 9,
     "initx": distance_scale*5.2034, //potrzebne do resetu
-    "inity": 0,
-    "initz": 80,
-    "x": distance_scale*5.2034,
-    "y": 0,
-    "z": 80
+    "x": 0,
+    "init_rotate": 100/360*2*3.14,
+    "rotate": 0
 };
 
 let saturn = {
@@ -91,11 +79,9 @@ let saturn = {
     "circle_time": 10756,
     "spin_time": 11,
     "initx": distance_scale*9.5371, //potrzebne do resetu
-    "inity": 0,
-    "initz": 80,
-    "x": distance_scale*9.5371,
-    "y": 0,
-    "z": 80
+    "x": 0,
+    "init_rotate": 80/360*2*3.14,
+    "rotate": 0
 };
 let uranus = {
     "name": "Uranus",
@@ -104,11 +90,9 @@ let uranus = {
     "circle_time": 30707,
     "spin_time": 17,
     "initx": distance_scale*19.1913, //potrzebne do resetu
-    "inity": 0,
-    "initz": 80,
-    "x": distance_scale*19.1913,
-    "y": 0,
-    "z": 80
+    "x": 0,
+    "init_rotate": 330/360*2*3.14,
+    "rotate": 0
 };
 let neptune = {
     "name": "Naptune",
@@ -117,11 +101,9 @@ let neptune = {
     "circle_time": 60223,
     "spin_time": 16,
     "initx": distance_scale*30.0690, //potrzebne do resetu
-    "inity": 0,
-    "initz": 80,
-    "x": distance_scale*30.0690,
-    "y": 0,
-    "z": 80
+    "x": 0,
+    "init_rotate": 20/360*2*3.14,
+    "rotate": 0
 };
 
 
@@ -135,3 +117,9 @@ objects.push(jupiter);
 objects.push(saturn);
 objects.push(uranus);
 objects.push(neptune);
+
+for(let item of objects)
+{
+    item.x=item.initx;
+    item.rotate=item.init_rotate;
+}

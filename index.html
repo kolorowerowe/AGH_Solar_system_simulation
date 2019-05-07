@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Solar System Simulation</title>
 
-    <meta name="description" content="Projekt zaliczeniowy na przedmiot Symulacja Dyskretnych Systemów Z³o¿onych (SDSZ) ">
-    <meta name="author" content="Borowy Szymon, Ko³odziej Dominik, Kozak Marcin">
+    <meta name="description" content="Projekt zaliczeniowy na przedmiot Symulacja Dyskretnych SystemÃ³w ZÅ‚oÅ¼onych (SDSZ) ">
+    <meta name="author" content="Borowy Szymon, KoÅ‚odziej Dominik, Kozak Marcin">
 
     <link rel="stylesheet" href="src/mainStyle.css">
     <link rel="shortcut icon" href="src/img/icon.ico">
@@ -16,13 +16,10 @@
         <canvas id="canvas1"></canvas>
 
 
-        <!-- In Panel will be every information abouut Planets and configuration of everything -->
+        <!-- In Panel will be every information about Planets and configuration of everything -->
         <div id="panel">
             <h2 id="h2_panel">Panel </h2>
-          <!---<button onclick="draw()">Narysuj coœ</button> --> <!-- Rysuje siê dopiero po naciœniêciu Start-->
-            <button onclick="clearEverything()">Wyczyœæ</button>
-            <br/>
-            <p>Aktualny up³yw: <div id="czas">0</div> dni </p>
+            <p>Aktualny upÅ‚yw: <div id="czas">0</div> dni </p>
             <p>Aktualna data: <div id="data">0</div></p>
             <br/>
             <input type="range" id="time_slider" name="cowbell" min="1" max="50" value="1" step="1" onchange="changeTimeGain()"  oninput="changeTimeGain()">
@@ -30,7 +27,7 @@
             <br/>
             <input type="text" id="skok"/>
             <button onclick="jump()">JUMP</button>
-            <br/>
+            <br/><br/>
             <button onclick="start()">Start</button>
             <button onclick="pause()">Pauza</button>
             <button onclick="reset()">Reset</button>
