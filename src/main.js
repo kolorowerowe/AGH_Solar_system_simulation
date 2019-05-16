@@ -70,7 +70,7 @@ function changeTimeGain() {
 function reset() {
     timeout = 1000;
     clearInterval(interval);
-    
+
     clearEverything(); //wyczyœæ wszystko
     ctx.restore(); //przywróc initial state- ³¹czy sie z ctx.save()
     ctx.save(); //zapiszmy ponownie do kolejnego reseta
@@ -90,6 +90,7 @@ function reset() {
     document.getElementById("time_slider").value = 1;
     document.getElementById("time_gain").innerHTML= "1x";
 
+    scale=1;
 
 }
 
@@ -208,9 +209,13 @@ function zoomin()
 
 function zoomout()
 {
-    scale/=2;
+
     clearEverything();
-    ctx.scale(scale,scale);
+    if(scale >=1)
+        ctx.scale(1/scale,1/scale);
+    else
+        ctx.scale(scale,scale);
+    scale/=2;
     draw();
 }
 
