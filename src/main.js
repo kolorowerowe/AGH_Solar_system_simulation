@@ -2,7 +2,7 @@
 
 let canvas = document.getElementById("canvas1");
 var time=0;
-
+var scale =1;
 //month gets value from 0 to 11
 //.getTime() returns in milisec
 var date_init_ = new Date(2019, 3, 14, 12, 0, 0, 0);
@@ -196,6 +196,22 @@ function setDefaultDate(){
     if (month<10) month="0"+month;
 
     document.getElementById('skokData').value=date_init_.getFullYear()+"-"+month+"-"+days;
+}
+
+function zoomin()
+{
+    scale*=2;
+    clearEverything();
+    ctx.scale(scale,scale);
+    draw();
+}
+
+function zoomout()
+{
+    scale/=2;
+    clearEverything();
+    ctx.scale(scale,scale);
+    draw();
 }
 
 
