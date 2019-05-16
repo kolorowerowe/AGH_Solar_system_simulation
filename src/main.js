@@ -5,9 +5,10 @@ var time=0;
 
 //month gets value from 0 to 11
 //.getTime() returns in milisec
-var date_init = new Date(2019, 3, 14, 12, 0, 0, 0).getTime();
+var date_init_ = new Date(2019, 3, 14, 12, 0, 0, 0);
+var date_init = date_init_.getTime();
 var date_mili = date_init;
-var running = false;
+var running = 0; // 0 - stop, 1- running, 2 - pause
 var timeout=1000;
 var timeout_draw=10; // nie zmieniaj, pliska xD Marcin
 
@@ -16,6 +17,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 writeDate();
+setDefaultDate();
 var interval = setInterval('loop()',timeout);
 var interval_draw = setInterval('draw()',timeout_draw);
 
@@ -23,8 +25,9 @@ var interval_draw = setInterval('draw()',timeout_draw);
 var ctx = canvas.getContext("2d"),
     cw = canvas.width,
     ch = canvas.height;
-    ctx.translate(cw/2,ch/2); //Do rotacji mi jest potrzebne- przemieszczam œrodek uk³adu na œrodek strony
-    ctx.save(); //potrzebne do resetu
+
+ctx.translate(cw/2,ch/2); //Do rotacji mi jest potrzebne- przemieszczam œrodek uk³adu na œrodek strony
+ctx.save(); //potrzebne do resetu
 
 /*    end of main    */
 
@@ -46,12 +49,12 @@ function getDateString(milisec){
 }
 
 function start(){
-    running = true;
+    running = 1;
     writeDate();
 }
 
 function pause() {
-    running = false;
+    running = 2;
 }
 
 function changeTimeGain() {
@@ -78,7 +81,7 @@ function reset() {
         circle(item.radius, item.color,item.x ,0); //uk³ad wspó³rzêdnych jest na œrodku strony!
     }
 
-    running = false;
+    running = 0;
     time = 0;
     date_mili = date_init;
     interval = setInterval('loop()', timeout);
@@ -92,7 +95,7 @@ function reset() {
 
 function loop() {
 
-    if (running) {
+    if (running === 1) {
         time++;
         date_mili += (24*60*60*1000); //24hours * 60min * 60sek *1000milisek @Dominik?
         writeDate();
@@ -100,21 +103,23 @@ function loop() {
 }
 
 function draw()
-{   if(running)
+{   if(running !== 0)
     {
       //ctx.strokeStyle("red");
-      
       let gain = document.getElementById("time_slider").value;
       ctx.save();
       clearEverything(); //wyczyœæ canvas-> nie chcemy ¿eby planeta zostawia³a œlad (przynajmniej na razie xD)
       ctx.restore();
-      //i=0;
       for (let item of objects)
       {
         if(item.name !== "Sun")
         {
           ctx.save(); //zapisz stan canvas
-          let przes = (2*Math.PI*gain/(item.circle_time*100)); //o ile siê w tej klatce przesunie? Ma na to wp³yw circle_time i iloœæ ?klatek na sekundê?
+            let przes =0;
+            if (running === 1) {
+                przes = (2 * Math.PI * gain / (item.circle_time * 100)); //o ile siê w tej klatce przesunie? Ma na to wp³yw circle_time i iloœæ ?klatek na sekundê?
+            }
+
           ctx.rotate(item.rotate+przes);// obracam uk³ad wspórzêdnych
           circle(item.radius, item.color,item.x ,0); // rysujemy
           planet_arc(item);
@@ -125,7 +130,7 @@ function draw()
         else //a S³onko po prostu narysuj
         {circle(item.radius, item.color,item.x ,0);}
 
-        if(item.rotate % item.circle_time === 0){item.rotate=0;} //ogranicza ¿e nie bêdzie mega du¿ych cyfr w tablicy- od 0 do item.circle_time
+          if(item.rotate % item.circle_time === 0){item.rotate=0;} //ogranicza ¿e nie bêdzie mega du¿ych cyfr w tablicy- od 0 do item.circle_time
           
       }
     }
@@ -138,7 +143,6 @@ function clearEverything() {
     ctx.translate((cw/2),(ch/2))
     
 }
-
 
 function circle(radius,color,x,y){
     ctx.beginPath();
@@ -156,26 +160,42 @@ function planet_arc(planet)
     ctx.stroke();
 }
 
-function jump()
-{
-    if(running)
+function jumpDate(){
+
+    var boxDate=document.getElementById('skokData').value;
+
+    var dates=boxDate.split('-');
+    if ( dates.length !=3 || dates[0]<0 || dates[1]<1 || dates[1]>12 || dates[2]<1 || dates[2]>31){
+        alert('Nieprawid³owy format daty');
+        setDefaultDate();
+        return;
+    }
+    let inputDate = new Date(dates[0], dates[1]-1, dates[2], 12, 0, 0, 0).getTime();
+    let skok = (inputDate - date_mili)/(24*60*60*1000);
+
+    time+=skok;
+    date_mili+=skok*(24*60*60*1000);
+
+    //!!! below
+    for(let item of objects)
     {
-        //poda³ ile dni skoczyæ do przodu
-        let skok_string = document.getElementById("skok").value;
-        let skok = parseInt(skok_string, 10);
-        
-        time+=skok;
-        date_mili+=skok*(24*60*60*1000);
-    
-        //!!! below
-        for(let item of objects)
+        if(item.name !== "Sun")
         {
-            if(item.name !== "Sun")
-            {
-                item.rotate+=(skok*100)*(2*Math.PI/(item.circle_time*100));
-            }
+            item.rotate+=(skok*100)*(2*Math.PI/(item.circle_time*100));
         }
     }
+    draw();
+    writeDate();
+
+}
+
+function setDefaultDate(){
+    var days=date_init_.getDate();
+    var month=date_init_.getMonth()+1;
+    if (days<10) days="0"+days;
+    if (month<10) month="0"+month;
+
+    document.getElementById('skokData').value=date_init_.getFullYear()+"-"+month+"-"+days;
 }
 
 
