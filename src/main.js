@@ -21,13 +21,14 @@ setDefaultDate();
 var interval = setInterval('loop()',timeout);
 var interval_draw = setInterval('draw()',timeout_draw);
 
-// Czy tego poni¿ej  nie mo¿na daæ wy¿ej? Zawrzeæ w main'ie? @Dominik
 var ctx = canvas.getContext("2d"),
     cw = canvas.width,
     ch = canvas.height;
 
 ctx.translate(cw/2,ch/2); //Do rotacji mi jest potrzebne- przemieszczam œrodek uk³adu na œrodek strony
 ctx.save(); //potrzebne do resetu
+
+
 
 /*    end of main    */
 
@@ -129,7 +130,11 @@ function draw()
           ctx.restore(); //przywracamy oryginalny uk³ad uk³adu wspó³rzêdnych
         }
         else //a S³onko po prostu narysuj
-        {circle(item.radius, item.color,item.x ,0);}
+        {
+            // circle(item.radius, item.color,item.x ,0);
+            ctx.drawImage(item.img,-item.img_width/2,-item.img_height/2,item.img_width,item.img_height); // Or at whatever offset you like
+
+        }
 
           if(item.rotate % item.circle_time === 0){item.rotate=0;} //ogranicza ¿e nie bêdzie mega du¿ych cyfr w tablicy- od 0 do item.circle_time
           
@@ -201,9 +206,10 @@ function setDefaultDate(){
 
 function zoomin()
 {
-    scale*=2;
     clearEverything();
-    ctx.scale(scale,scale);
+    ctx.scale(2,2);
+    scale*=2;
+    console.log("Skala: " + scale);
     draw();
 }
 
@@ -211,11 +217,9 @@ function zoomout()
 {
 
     clearEverything();
-    if(scale >=1)
-        ctx.scale(1/scale,1/scale);
-    else
-        ctx.scale(scale,scale);
+    ctx.scale(1/2, 1/2);
     scale/=2;
+    console.log("Skala: " + scale);
     draw();
 }
 

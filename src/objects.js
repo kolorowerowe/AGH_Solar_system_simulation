@@ -14,7 +14,12 @@ let sun = {
     "initx": 0, //potrzebne do resetu
     "x": 0,
     "init_rotate": 0,
-    "rotate": 0
+    "rotate": 0,
+
+    "img": new Image(),
+    "img_url": 'src/img/slonce.png',
+    "img_width": 15,
+    "img_height":15
 };
 let mercury = {
     "name": "Mercury",
@@ -106,6 +111,7 @@ let neptune = {
     "rotate": 0
 };
 
+sun.img.src = sun.img_url;
 
 
 objects.push(sun);
