@@ -16,6 +16,27 @@ var timeout_draw=10; // nie zmieniaj, pliska xD Marcin
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+canvas.onclick = function(e) {
+    console.log('canvas click');
+    const mousePos = {
+        x: e.clientX,
+        y: e.clientY
+    };
+    //pixel pod kursorem
+    const pixel = ctx.getImageData(mousePos.x, mousePos.y, 1, 1).data;
+
+    //tworzymy HEX tego pixela
+    const color = (`#${rgbToHex(pixel[0])}${rgbToHex(pixel[1])}${rgbToHex(pixel[2])}`).toUpperCase();
+
+
+    objects.forEach(ob => {
+        if (hasSameColor(color, ob)) {
+            var elem = document.getElementById("info");
+            elem.innerHTML = ob.info;
+        }
+    });
+};
+
 writeDate();
 setDefaultDate();
 var interval = setInterval('loop()',timeout);
@@ -51,6 +72,7 @@ function getDateString(milisec){
 
 function start(){
     running = 1;
+    alert("Start");
     writeDate();
 }
 
@@ -125,6 +147,8 @@ function draw()
           ctx.rotate(item.rotate+przes);// obracam uk³ad wspórzêdnych
           circle(item.radius, item.color,item.x ,0); // rysujemy
           planet_arc(item);
+          //zmiana wielkoœci ¿¹eby da³o siê klikn¹æ w nazwê planety
+          ctx.font = "25px Montserrat";
           ctx.fillText(item.name,item.x,0);
           item.rotate+=przes; //zmieniamy przesuniêcie w tablicy
           ctx.restore(); //przywracamy oryginalny uk³ad uk³adu wspó³rzêdnych
@@ -137,7 +161,7 @@ function draw()
         }
 
           if(item.rotate % item.circle_time === 0){item.rotate=0;} //ogranicza ¿e nie bêdzie mega du¿ych cyfr w tablicy- od 0 do item.circle_time
-          
+
       }
     }
 }
@@ -147,7 +171,7 @@ function clearEverything() {
     ctx.translate(-(cw/2),-(ch/2));
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.translate((cw/2),(ch/2))
-    
+
 }
 
 function circle(radius,color,x,y){
@@ -222,6 +246,22 @@ function zoomout()
     console.log("Skala: " + scale);
     draw();
 }
+
+function hasSameColor(color, object) {
+
+    return object.color === color;
+}
+
+
+
+var rgbToHex = function (rgb) {
+    var hex = Number(rgb).toString(16);
+    if (hex.length < 2) {
+        hex = "0" + hex;
+    }
+    return hex;
+};
+
 
 
 /*

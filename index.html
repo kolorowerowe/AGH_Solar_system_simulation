@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html;charset="UTF-8"">
     <title>Solar System Simulation</title>
 
     <meta name="description" content="Projekt zaliczeniowy na przedmiot Symulacja Dyskretnych Systemów Złożonych (SDSZ) ">
@@ -13,12 +14,11 @@
 <body>
 
     <div id="container">
-        <canvas id="canvas1"></canvas>
-
+        <canvas id="canvas1" onwheel=""></canvas>
 
         <!-- In Panel will be every information about Planets and configuration of everything -->
         <div id="panel">
-            <h2 id="h2_panel">Panel </h2>
+            <h2 id="h2_panel" onclick="alert('aaaaaa');">Panel </h2>
             <p>Aktualny upływ: <div id="czas">0</div> dni </p>
             <p>Aktualna data: <div id="data">0</div></p>
             <br/>
@@ -36,6 +36,11 @@
             <br/>
             <button onclick="zoomin()">Zoom In</button>
             <button onclick="zoomout()">Zoom Out</button>
+            <div id=""planetInfo>
+                <h2>Informacje o planecie </h2>
+                (kliknij na planetę)
+                <p id="info"></p>
+            </div>
 
             <script type="text/javascript" src="src/objects.js"></script>
             <script type="text/javascript" src="src/main.js"></script>

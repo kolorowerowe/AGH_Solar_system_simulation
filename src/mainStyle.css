@@ -32,7 +32,7 @@ html {
 }
 
 #canvas1 {
-    z-index: -1;        /* canvas at the bottom*/
+    /*z-index: -1;        /* canvas at the bottom*/
     position:absolute;
     left:0;
     top:0;
