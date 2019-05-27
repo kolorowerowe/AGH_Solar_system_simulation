@@ -39,7 +39,9 @@ let mercury = {
         "Okres obrotu gwiazdowego: 58.6462 dni" + "<br />" +
         "Okres orbity gwiazdowej: 0.2408467 lat" + "<br />" +
         "Grawitacja równikowa: 3.70 m/s^2 " + "<br />" +
-        "Prędkość ucieczki: 4.25 km/s " + "<br />"
+        "Prędkość ucieczki: 4.25 km/s " + "<br />"+
+        "<img src='https://images-assets.nasa.gov/image/PIA11406/PIA11406~orig.jpg' height='300' width='300' >"
+
 };
 let venus = {
     "name": "Venus",
@@ -59,7 +61,8 @@ let venus = {
         "Okres obrotu gwiazdowego: -243.018 dni" + "<br />" +
         "Okres orbity gwiazdowej: 0.61519726 lat" + "<br />" +
         "Grawitacja równikowa: 8.87 m/s^2" + "<br />" +
-        "Prędkość ucieczki: 10.36 km/s" + "<br />"
+        "Prędkość ucieczki: 10.36 km/s" + "<br />"+
+        "<img src='https://images-assets.nasa.gov/image/PIA00271/PIA00271~orig.jpg' height='300' width='300' >"
 };
 let earth = {
     "name": "Earth",
@@ -79,7 +82,8 @@ let earth = {
         "Okres obrotu gwiazdowego: 0.99726968 dni" + "<br />" +
         "Okres orbity gwiazdowej: 1.0000174 lat" + "<br />" +
         "Grawitacja równikowa: 9.80 m/s^2" + "<br />" +
-        "Prędkość ucieczki: 11.19 km/s" + "<br />"
+        "Prędkość ucieczki: 11.19 km/s" + "<br />"+
+        "<img src='https://images-assets.nasa.gov/image/PIA18033/PIA18033~orig.jpg' height='300' width='300' >"
 };
 let mars = {
     "name": "Mars",
@@ -99,7 +103,8 @@ let mars = {
         "Okres obrotu gwiazdowego: 1.02595676 dni" + "<br />" +
         "Okres orbity gwiazdowej: 1.8808476 lat" + "<br />" +
         "Grawitacja równikowa: 3.71 m/s^2" + "<br />" +
-        "Prędkość ucieczki: 5.03 km/s" + "<br />"
+        "Prędkość ucieczki: 5.03 km/s" + "<br />"+
+        "<img src='https://images-assets.nasa.gov/image/PIA04591/PIA04591~orig.jpg' height='300' width='300' >"
 };
 let jupiter = {
     "name": "Jupiter",
@@ -119,7 +124,8 @@ let jupiter = {
         "Okres obrotu gwiazdowego: 0.41354 dni" + "<br />" +
         "Okres orbity gwiazdowej: 11.862615 lat" + "<br />" +
         "Grawitacja równikowa: 24.79 m/s^2" + "<br />" +
-        "Prędkość ucieczki: 60.20 km/s" + "<br />"
+        "Prędkość ucieczki: 60.20 km/s" + "<br />"+
+        "<img src='https://images-assets.nasa.gov/image/PIA00343/PIA00343~orig.jpg' height='300' width='300' >"
 };
 
 let saturn = {
@@ -140,7 +146,8 @@ let saturn = {
         "Okres obrotu gwiazdowego: 0.44401 dni" + "<br />" +
         "Okres orbity gwiazdowej: 29.447498 lat" + "<br />" +
         "Grawitacja równikowa: 10.44 m/s^2" + "<br />" +
-        "Prędkość ucieczki: 36.09 km/s" + "<br />"
+        "Prędkość ucieczki: 36.09 km/s" + "<br />"+
+        "<img src='https://images-assets.nasa.gov/image/PIA04913/PIA04913~orig.jpg' height='300' width='300' >"
 };
 let uranus = {
     "name": "Uranus",
@@ -160,7 +167,8 @@ let uranus = {
         "Okres obrotu gwiazdowego: -0.71833 dni" + "<br />" +
         "Okres orbity gwiazdowej: 84.016846 lat" + "<br />" +
         "Grawitacja równikowa: 8.87 m/s^2" + "<br />" +
-        "Prędkość ucieczki: 21.38 km/s" + "<br />"
+        "Prędkość ucieczki: 21.38 km/s" + "<br />"+
+        "<img src='https://images-assets.nasa.gov/image/PIA01391/PIA01391~orig.jpg' height='300' width='300' >"
 };
 let neptune = {
     "name": "Naptune",
@@ -180,7 +188,8 @@ let neptune = {
         "Okres obrotu gwiazdowego: 0.67125 dni" + "<br />" +
         "Okres orbity gwiazdowej: 164.79132 lat" + "<br />" +
         "Grawitacja równikowa: 11.15 m/s^2" + "<br />" +
-        "Prędkość ucieczki: 23.56 km/s" + "<br />"
+        "Prędkość ucieczki: 23.56 km/s" + "<br />"+
+        "<img src='https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg' height='300' width='300' >"
 };
 
 //link do danych umieścić w dokumentacji
