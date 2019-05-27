@@ -51,35 +51,35 @@ let venus = {
     "x": 0,
     "init_rotate": 20/360*2*3.14,
     "rotate": 0,
-    "info": "Planeta: Venus \n" +
-        "Promień równikowy: 6051.8 ± 1.0 km \n" +
-        "Średni promień: 6051.8 ± 1.0 km \n" +
-        "Masa: 4.86747 ± 0.00023 x10^24 kg \n" +
-        "Gęstość objętościowa: 5.243 ± 0.003 g/cm^3 \n" +
-        "Okres obrotu gwiazdowego: -243.018 dni \n" +
-        "Okres orbity gwiazdowej: 0.61519726 lat \n" +
-        "Grawitacja równikowa: 8.87 m/s^2 \n" +
-        "Prędkość ucieczki: 10.36 km/s \n"
+    "info": "Planeta: Venus" + "<br />" +
+        "Promień równikowy: 6051.8 ± 1.0 km" + "<br />" +
+        "Średni promień: 6051.8 ± 1.0 km" + "<br />" +
+        "Masa: 4.86747 ± 0.00023 x10^24 kg" + "<br />" +
+        "Gęstość objętościowa: 5.243 ± 0.003 g/cm^3" + "<br />" +
+        "Okres obrotu gwiazdowego: -243.018 dni" + "<br />" +
+        "Okres orbity gwiazdowej: 0.61519726 lat" + "<br />" +
+        "Grawitacja równikowa: 8.87 m/s^2" + "<br />" +
+        "Prędkość ucieczki: 10.36 km/s" + "<br />"
 };
 let earth = {
     "name": "Earth",
     "radius": 12756*radius_scale/2,
-    "color": "blue",
+    "color": "#0000FF",
     "circle_time": 365.25,
     "spin_time": 24,
     "initx": distance_scale, //potrzebne do resetu
     "x": 0,
     "init_rotate": 110/360*2*3.14,
     "rotate": 0,
-    "info": "Planeta: Earth \n" +
-        "Promień równikowy: 6378.1366 ± 0.0001 km \n" +
-        "Średni promień: 6371.0084 ± 0.0001 km \n" +
-        "Masa: 5.97237 ± 0.00028 x10^24 kg \n" +
-        "Gęstość objętościowa: 5.5136 ± 0.0003 g/cm^3 \n" +
-        "Okres obrotu gwiazdowego: 0.99726968 dni \n" +
-        "Okres orbity gwiazdowej: 1.0000174 lat \n" +
-        "Grawitacja równikowa: 9.80 m/s^2 \n" +
-        "Prędkość ucieczki: 11.19 km/s \n"
+    "info": "Planeta: Earth" + "<br />" +
+        "Promień równikowy: 6378.1366 ± 0.0001 km" + "<br />" +
+        "Średni promień: 6371.0084 ± 0.0001 km" + "<br />" +
+        "Masa: 5.97237 ± 0.00028 x10^24 kg" + "<br />" +
+        "Gęstość objętościowa: 5.5136 ± 0.0003 g/cm^3" + "<br />" +
+        "Okres obrotu gwiazdowego: 0.99726968 dni" + "<br />" +
+        "Okres orbity gwiazdowej: 1.0000174 lat" + "<br />" +
+        "Grawitacja równikowa: 9.80 m/s^2" + "<br />" +
+        "Prędkość ucieczki: 11.19 km/s" + "<br />"
 };
 let mars = {
     "name": "Mars",
@@ -91,15 +91,15 @@ let mars = {
     "x": 0,
     "init_rotate": 250/360*2*3.14,
     "rotate": 0,
-    "info": "Planeta: Mars \n" +
-        "Promień równikowy: 3396.19 ± 0.1 km \n" +
-        "Średni promień: 3389.50 ± 0.2 km \n" +
-        "Masa: 0.641712 ± 0.00030 x10^24 kg \n" +
-        "Gęstość objętościowa: 3.9341 ± 0.0007 g/cm^3 \n" +
-        "Okres obrotu gwiazdowego: 1.02595676 dni \n" +
-        "Okres orbity gwiazdowej: 1.8808476 lat \n" +
-        "Grawitacja równikowa: 3.71 m/s^2 \n" +
-        "Prędkość ucieczki: 5.03 km/s \n"
+    "info": "Planeta: Mars" + "<br />" +
+        "Promień równikowy: 3396.19 ± 0.1 km" + "<br />" +
+        "Średni promień: 3389.50 ± 0.2 km" + "<br />" +
+        "Masa: 0.641712 ± 0.00030 x10^24 kg" + "<br />" +
+        "Gęstość objętościowa: 3.9341 ± 0.0007 g/cm^3" + "<br />" +
+        "Okres obrotu gwiazdowego: 1.02595676 dni" + "<br />" +
+        "Okres orbity gwiazdowej: 1.8808476 lat" + "<br />" +
+        "Grawitacja równikowa: 3.71 m/s^2" + "<br />" +
+        "Prędkość ucieczki: 5.03 km/s" + "<br />"
 };
 let jupiter = {
     "name": "Jupiter",
@@ -111,15 +111,15 @@ let jupiter = {
     "x": 0,
     "init_rotate": 100/360*2*3.14,
     "rotate": 0,
-    "info": "Planeta: Jupiter \n" +
-        "Promień równikowy: 71492 ± 4 km \n" +
-        "Średni promień: 69911 ± 6 km \n" +
-        "Masa: 1898.187 ± 0.088 x10^24 kg \n" +
-        "Gęstość objętościowa: 1.3262 ± 0.0003 g/cm^3 \n" +
-        "Okres obrotu gwiazdowego: 0.41354 dni \n" +
-        "Okres orbity gwiazdowej: 11.862615 lat \n" +
-        "Grawitacja równikowa: 24.79 m/s^2 \n" +
-        "Prędkość ucieczki: 60.20 km/s \n"
+    "info": "Planeta: Jupiter" + "<br />" +
+        "Promień równikowy: 71492 ± 4 km" + "<br />" +
+        "Średni promień: 69911 ± 6 km" + "<br />" +
+        "Masa: 1898.187 ± 0.088 x10^24 kg" + "<br />" +
+        "Gęstość objętościowa: 1.3262 ± 0.0003 g/cm^3" + "<br />" +
+        "Okres obrotu gwiazdowego: 0.41354 dni" + "<br />" +
+        "Okres orbity gwiazdowej: 11.862615 lat" + "<br />" +
+        "Grawitacja równikowa: 24.79 m/s^2" + "<br />" +
+        "Prędkość ucieczki: 60.20 km/s" + "<br />"
 };
 
 let saturn = {
@@ -133,14 +133,14 @@ let saturn = {
     "init_rotate": 80/360*2*3.14,
     "rotate": 0,
     "info": "Planeta: Saturn <br />" +
-        "Promień równikowy: 60268 ± 4 km \n" +
-        "Średni promień: 58232 ± 6 km \n" +
-        "Masa: 568.336 ± 0.026 x10^24 kg \n" +
-        "Gęstość objętościowa: 0.6871 ± 0.0002 g/cm^3 \n" +
-        "Okres obrotu gwiazdowego: 0.44401 dni \n" +
-        "Okres orbity gwiazdowej: 29.447498 lat \n" +
-        "Grawitacja równikowa: 10.44 m/s^2 \n" +
-        "Prędkość ucieczki: 36.09 km/s \n"
+        "Promień równikowy: 60268 ± 4 km" + "<br />" +
+        "Średni promień: 58232 ± 6 km" + "<br />" +
+        "Masa: 568.336 ± 0.026 x10^24 kg" + "<br />" +
+        "Gęstość objętościowa: 0.6871 ± 0.0002 g/cm^3" + "<br />" +
+        "Okres obrotu gwiazdowego: 0.44401 dni" + "<br />" +
+        "Okres orbity gwiazdowej: 29.447498 lat" + "<br />" +
+        "Grawitacja równikowa: 10.44 m/s^2" + "<br />" +
+        "Prędkość ucieczki: 36.09 km/s" + "<br />"
 };
 let uranus = {
     "name": "Uranus",
@@ -152,15 +152,15 @@ let uranus = {
     "x": 0,
     "init_rotate": 330/360*2*3.14,
     "rotate": 0,
-    "info": "Planeta: Uranus \n" +
-        "Promień równikowy: 25559 ± 4 km \n" +
-        "Średni promień: 25362 ± 7 km \n" +
-        "Masa: 86.8127 ± 0.0040 x10^24 kg \n" +
-        "Gęstość objętościowa: 1.270 ± 0.001 g/cm^3 \n" +
-        "Okres obrotu gwiazdowego: -0.71833 dni \n" +
-        "Okres orbity gwiazdowej: 84.016846 lat \n" +
-        "Grawitacja równikowa: 8.87 m/s^2 \n" +
-        "Prędkość ucieczki: 21.38 km/s \n"
+    "info": "Planeta: Uranus" + "<br />" +
+        "Promień równikowy: 25559 ± 4 km" + "<br />" +
+        "Średni promień: 25362 ± 7 km" + "<br />" +
+        "Masa: 86.8127 ± 0.0040 x10^24 kg" + "<br />" +
+        "Gęstość objętościowa: 1.270 ± 0.001 g/cm^3" + "<br />" +
+        "Okres obrotu gwiazdowego: -0.71833 dni" + "<br />" +
+        "Okres orbity gwiazdowej: 84.016846 lat" + "<br />" +
+        "Grawitacja równikowa: 8.87 m/s^2" + "<br />" +
+        "Prędkość ucieczki: 21.38 km/s" + "<br />"
 };
 let neptune = {
     "name": "Naptune",
@@ -172,15 +172,15 @@ let neptune = {
     "x": 0,
     "init_rotate": 20/360*2*3.14,
     "rotate": 0,
-    "info": "Planeta: Neptune \n" +
-        "Promień równikowy: 24764 ± 15 km \n" +
-        "Średni promień: 24622 ± 19 km \n" +
-        "Masa: 102.4126 ± 0.0048 x10^24 kg \n" +
-        "Gęstość objętościowa: 1.638 ± 0.004 g/cm^3 \n" +
-        "Okres obrotu gwiazdowego: 0.67125 dni \n" +
-        "Okres orbity gwiazdowej: 164.79132 lat \n" +
-        "Grawitacja równikowa: 11.15 m/s^2 \n" +
-        "Prędkość ucieczki: 23.56 km/s \n"
+    "info": "Planeta: Neptune" + "<br />" +
+        "Promień równikowy: 24764 ± 15 km" + "<br />" +
+        "Średni promień: 24622 ± 19 km" + "<br />" +
+        "Masa: 102.4126 ± 0.0048 x10^24 kg" + "<br />" +
+        "Gęstość objętościowa: 1.638 ± 0.004 g/cm^3" + "<br />" +
+        "Okres obrotu gwiazdowego: 0.67125 dni" + "<br />" +
+        "Okres orbity gwiazdowej: 164.79132 lat" + "<br />" +
+        "Grawitacja równikowa: 11.15 m/s^2" + "<br />" +
+        "Prędkość ucieczki: 23.56 km/s" + "<br />"
 };
 
 //link do danych umieścić w dokumentacji

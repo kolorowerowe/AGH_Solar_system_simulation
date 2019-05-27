@@ -72,7 +72,6 @@ function getDateString(milisec){
 
 function start(){
     running = 1;
-    alert("Start");
     writeDate();
 }
 
@@ -112,6 +111,9 @@ function reset() {
     writeDate();
     document.getElementById("time_slider").value = 1;
     document.getElementById("time_gain").innerHTML= "1x";
+
+    var elem = document.getElementById("info");
+    elem.innerHTML = "";
 
     scale=1;
 
