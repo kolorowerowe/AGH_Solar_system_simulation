@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text/html;charset="UTF-8"">
+    <meta http-equiv="Content-type" content="text/html" charset="UTF-8">
     <title>Solar System Simulation</title>
 
     <meta name="description" content="Projekt zaliczeniowy na przedmiot Symulacja Dyskretnych Systemów Złożonych (SDSZ) ">
@@ -18,7 +18,7 @@
 
         <!-- In Panel will be every information about Planets and configuration of everything -->
         <div id="panel">
-            <h2 id="h2_panel" onclick="alert('aaaaaa');">Panel </h2>
+            <h2 id="h2_panel">Panel </h2>
             <p>Aktualny upływ: <div id="czas">0</div> dni </p>
             <p>Aktualna data: <div id="data">0</div></p>
             <br/>
@@ -33,20 +33,20 @@
             <button onclick="start()">Start</button>
             <button onclick="pause()">Pauza</button>
             <button onclick="reset()">Reset</button>
-            <br/>
+            <br/><br/>
             <button onclick="zoomin()">Zoom In</button>
             <button onclick="zoomout()">Zoom Out</button>
-            <div id=""planetInfo>
-                <h2>Informacje o planecie </h2>
-                (kliknij na planetę)
-                <p id="info"></p>
-            </div>
-
-            <script type="text/javascript" src="src/objects.js"></script>
-            <script type="text/javascript" src="src/main.js"></script>
 
         </div> <!--panel's div -->
+        <div id="planetInfo">
+            <h2>Informacje o planecie </h2>
+            (kliknij na planetę) <button onclick="zwinInfo()">Zwiń informacje</button>
+            <p id="info"></p>
+        </div>
     </div> <!--container's div -->
+
+    <script type="text/javascript" src="src/objects.js"></script>
+    <script type="text/javascript" src="src/main.js"></script>
 
 </body>
 </html>

@@ -100,7 +100,6 @@ function reset() {
     {
         item.x=item.initx; //pocz¹tkowe po³o¿enie
         item.rotate=item.init_rotate;
-        circle(item.radius, item.color,item.x ,0); //uk³ad wspó³rzêdnych jest na œrodku strony!
     }
 
     running = 0;
@@ -264,6 +263,9 @@ var rgbToHex = function (rgb) {
     return hex;
 };
 
+function zwinInfo() {
+    document.getElementById("info").innerHTML="";
+}
 
 
 /*
