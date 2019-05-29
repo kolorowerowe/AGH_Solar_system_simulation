@@ -47,3 +47,7 @@ html {
     top:0;
     width: available;
 }
+
+#obrot{
+    display: inline-block;
+}

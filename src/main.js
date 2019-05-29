@@ -11,6 +11,7 @@ var date_mili = date_init;
 var running = 0; // 0 - stop, 1- running, 2 - pause
 var timeout=1000;
 var timeout_draw=10; // nie zmieniaj, pliska xD Marcin
+var clicked_planet = "", ever_clicked = false; // tylko po to by nie wyrzuca³o b³êdu undefined, zanim ktoœ kliknie na planetê
 
 // resize canvas to 100% of the window
 canvas.width = window.innerWidth;
@@ -31,8 +32,10 @@ canvas.onclick = function(e) {
 
     objects.forEach(ob => {
         if (hasSameColor(color, ob)) {
-            var elem = document.getElementById("info");
-            elem.innerHTML = ob.info;
+            document.getElementById("info").innerHTML = ob.info;
+            clicked_planet = ob;
+            writeAngle();
+            ever_clicked = true;
         }
     });
 };
@@ -53,6 +56,14 @@ ctx.save(); //potrzebne do resetu
 
 /*    end of main    */
 
+
+function writeAngle(){
+    var rot = clicked_planet.rotate;
+    rot = rot%(2*Math.PI);
+    rot = rot*360/(2*Math.PI);
+    rot = Math.round(rot*10)/10.0;
+    document.getElementById("obrot").innerHTML = rot + "&deg"
+}
 
 function writeDate() {
     document.getElementById("czas").innerHTML = time;
@@ -110,10 +121,9 @@ function reset() {
     writeDate();
     document.getElementById("time_slider").value = 1;
     document.getElementById("time_gain").innerHTML= "1x";
-
-    var elem = document.getElementById("info");
-    elem.innerHTML = "";
-
+    document.getElementById("info").innerHTML = "";
+    document.getElementById("obrot").innerHTML = "";
+    ever_clicked = false;
     scale=1;
 
 }
@@ -124,6 +134,8 @@ function loop() {
         time++;
         date_mili += (24*60*60*1000); //24hours * 60min * 60sek *1000milisek @Dominik?
         writeDate();
+        if (ever_clicked){writeAngle();}
+
     }
 }
 

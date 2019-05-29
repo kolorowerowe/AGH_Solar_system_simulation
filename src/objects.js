@@ -32,6 +32,7 @@ let mercury = {
     "init_rotate": 20/360*2*3.14,
     "rotate": 0,
     "info": "Planeta: Merkury " + "<br />" +
+        "Aktualny obrót: " + "<div id='obrot'></div>" + "<br />" +
         "Promień równikowy: 2440.53 ± 0.04 km " + "<br />"+
         "Średni promień: 2439.4 ± 0.1 km" + "<br />" +
         "Masa: 0.330114 ± 0.000021 x10^24 kg" + "<br />" +
@@ -54,6 +55,7 @@ let venus = {
     "init_rotate": 20/360*2*3.14,
     "rotate": 0,
     "info": "Planeta: Venus" + "<br />" +
+        "Aktualny obrót: " + "<div id='obrot'></div>" + "<br />" +
         "Promień równikowy: 6051.8 ± 1.0 km" + "<br />" +
         "Średni promień: 6051.8 ± 1.0 km" + "<br />" +
         "Masa: 4.86747 ± 0.00023 x10^24 kg" + "<br />" +
@@ -75,6 +77,7 @@ let earth = {
     "init_rotate": 110/360*2*3.14,
     "rotate": 0,
     "info": "Planeta: Earth" + "<br />" +
+        "Aktualny obrót: " + "<div id='obrot'></div>" + "<br />" +
         "Promień równikowy: 6378.1366 ± 0.0001 km" + "<br />" +
         "Średni promień: 6371.0084 ± 0.0001 km" + "<br />" +
         "Masa: 5.97237 ± 0.00028 x10^24 kg" + "<br />" +
@@ -96,6 +99,7 @@ let mars = {
     "init_rotate": 250/360*2*3.14,
     "rotate": 0,
     "info": "Planeta: Mars" + "<br />" +
+        "Aktualny obrót: " + "<div id='obrot'></div>" + "<br />" +
         "Promień równikowy: 3396.19 ± 0.1 km" + "<br />" +
         "Średni promień: 3389.50 ± 0.2 km" + "<br />" +
         "Masa: 0.641712 ± 0.00030 x10^24 kg" + "<br />" +
@@ -117,6 +121,7 @@ let jupiter = {
     "init_rotate": 100/360*2*3.14,
     "rotate": 0,
     "info": "Planeta: Jupiter" + "<br />" +
+        "Aktualny obrót: " + "<div id='obrot'></div>" + "<br />" +
         "Promień równikowy: 71492 ± 4 km" + "<br />" +
         "Średni promień: 69911 ± 6 km" + "<br />" +
         "Masa: 1898.187 ± 0.088 x10^24 kg" + "<br />" +
@@ -139,6 +144,7 @@ let saturn = {
     "init_rotate": 80/360*2*3.14,
     "rotate": 0,
     "info": "Planeta: Saturn <br />" +
+        "Aktualny obrót: " + "<div id='obrot'></div>" + "<br />" +
         "Promień równikowy: 60268 ± 4 km" + "<br />" +
         "Średni promień: 58232 ± 6 km" + "<br />" +
         "Masa: 568.336 ± 0.026 x10^24 kg" + "<br />" +
@@ -160,6 +166,7 @@ let uranus = {
     "init_rotate": 330/360*2*3.14,
     "rotate": 0,
     "info": "Planeta: Uranus" + "<br />" +
+        "Aktualny obrót: " + "<div id='obrot'></div>" + "<br />" +
         "Promień równikowy: 25559 ± 4 km" + "<br />" +
         "Średni promień: 25362 ± 7 km" + "<br />" +
         "Masa: 86.8127 ± 0.0040 x10^24 kg" + "<br />" +
@@ -181,6 +188,7 @@ let neptune = {
     "init_rotate": 20/360*2*3.14,
     "rotate": 0,
     "info": "Planeta: Neptune" + "<br />" +
+        "Aktualny obrót: " + "<div id='obrot'></div>" + "<br />" +
         "Promień równikowy: 24764 ± 15 km" + "<br />" +
         "Średni promień: 24622 ± 19 km" + "<br />" +
         "Masa: 102.4126 ± 0.0048 x10^24 kg" + "<br />" +
