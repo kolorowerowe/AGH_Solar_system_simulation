@@ -38,6 +38,13 @@ html {
     border-radius: 15px;
     border: 2px solid #FFFFFF;
     padding: 15px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+div#planetInfo > span{
+    font-size: 25px;
+    color: crimson;
 }
 
 #canvas1 {
