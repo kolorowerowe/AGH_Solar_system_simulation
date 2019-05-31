@@ -66,7 +66,7 @@ function writeAngle(){
 }
 
 function writeDate() {
-    document.getElementById("czas").innerHTML = time;
+    document.getElementById("czas").innerHTML = Math.round(time);
     document.getElementById("data").innerHTML = getDateString(date_mili);
 }
 
