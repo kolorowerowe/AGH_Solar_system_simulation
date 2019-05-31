@@ -61,7 +61,7 @@ function writeAngle(){
     var rot = clicked_planet.rotate;
     rot = rot%(2*Math.PI);
     rot = rot*360/(2*Math.PI);
-    rot = Math.round(rot*10)/10.0;
+    rot = Math.round(rot*10000)/10000.0;
     document.getElementById("obrot").innerHTML = rot + "&deg"
 }
 
