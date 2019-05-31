@@ -150,14 +150,14 @@ function draw()
       
       
     //asteroidy  
-    ctx.lineWidth=2.3;
+    ctx.lineWidth=17;
     ctx.strokeStyle = asteroids.color;
     ctx.beginPath();
     ctx.arc(0,0,asteroids.x, 0, 2*Math.PI,true);
     ctx.stroke();
-    ctx.fillText(asteroids.name,asteroids.x+3,0); //+3 to lekki odstêp
+    ctx.fillText(asteroids.name,asteroids.x+10,0); //+3 to lekki odstêp
     ctx.lineWidth=1;
-    //koniec asteroid
+     
       
       
       for (let item of objects)

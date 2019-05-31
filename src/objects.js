@@ -118,7 +118,7 @@ let asteroids = {
     "color": "#DCE1EA",
     "circle_time": 100000,
     "spin_time": 1,
-    "initx": distance_scale*2.85, //potrzebne do resetu
+    "initx": distance_scale*2.5, //potrzebne do resetu
     "x": 0,
     "init_rotate": 0,
     "rotate": 0,
