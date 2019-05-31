@@ -147,9 +147,22 @@ function draw()
       ctx.save();
       clearEverything(); //wyczyœæ canvas-> nie chcemy ¿eby planeta zostawia³a œlad (przynajmniej na razie xD)
       ctx.restore();
+      
+      
+    //asteroidy  
+    ctx.lineWidth=2.3;
+    ctx.strokeStyle = asteroids.color;
+    ctx.beginPath();
+    ctx.arc(0,0,asteroids.x, 0, 2*Math.PI,true);
+    ctx.stroke();
+    ctx.fillText(asteroids.name,asteroids.x+3,0); //+3 to lekki odstêp
+    ctx.lineWidth=1;
+    //koniec asteroid
+      
+      
       for (let item of objects)
       {
-        if(item.name !== "Sun")
+        if(item.name !== "Sun" && item.name !== "Asteroid belt")
         {
           ctx.save(); //zapisz stan canvas
             let przes =0;
@@ -168,14 +181,16 @@ function draw()
         }
         else //a S³onko po prostu narysuj
         {
-            // circle(item.radius, item.color,item.x ,0);
-            ctx.drawImage(item.img,-item.img_width/2,-item.img_height/2,item.img_width,item.img_height); // Or at whatever offset you like
+         circle(item.radius, item.color,item.x ,0);
+            //ctx.drawImage(item.img,-item.img_width/2,-item.img_height/2,item.img_width,item.img_height); // Or at whatever offset you like
 
         }
 
           if(item.rotate % item.circle_time === 0){item.rotate=0;} //ogranicza ¿e nie bêdzie mega du¿ych cyfr w tablicy- od 0 do item.circle_time
 
       }
+    
+    
     }
 }
 

@@ -1,4 +1,4 @@
-
+﻿
 let objects = [];
 let distance_scale = 20; // raczej tego nie ruszaj- mniej wiecej wiem po co to jest ale nie chce mi się pisać xDDDDD Marcin
 let radius_scale = 1/100000;
@@ -110,6 +110,25 @@ let mars = {
             "<b>Prędkość ucieczki:</b> 5.03 km/s" + "<br />"+
             "<img src='https://images-assets.nasa.gov/image/PIA04591/PIA04591~orig.jpg' height='300' width='300' >"
 };
+
+
+let asteroids = {
+    "name": "Asteroid belt",
+    "radius": 1*radius_scale/2,
+    "color": "#DCE1EA",
+    "circle_time": 100000,
+    "spin_time": 1,
+    "initx": distance_scale*2.85, //potrzebne do resetu
+    "x": 0,
+    "init_rotate": 0,
+    "rotate": 0,
+    "info": "<b>Obiekt:</b> <span style=\"color: #DCE1EA; font-size: 40px;\"> Asteroid belt </span>" + "<br />" +
+            "<b>Odległość od Słońca:</b> 1.7AU - 4AU (większość ciał 2AU-3AU)" + "<br />" +
+            "<b>Masa całk.:</b> 3.3 ± 0.3 x10<sup>21</sup> kg" + "<br />" +
+            "<b> Największe obiekty:</b> Ceres, Westa, Pallas i Hygiea <br>" +
+            "<img src='https://images-assets.nasa.gov/image/PIA04591/PIA04591~orig.jpg' height='300' width='300' >"
+};
+
 let jupiter = {
     "name": "Jupiter",
     "radius": 142984*radius_scale/2,
@@ -210,6 +229,7 @@ objects.push(mercury);
 objects.push(venus);
 objects.push(earth);
 objects.push(mars);
+objects.push(asteroids);
 objects.push(jupiter);
 objects.push(saturn);
 objects.push(uranus);
