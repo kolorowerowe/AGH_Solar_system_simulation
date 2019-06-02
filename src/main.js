@@ -150,11 +150,12 @@ function draw()
       
       
     //asteroidy  
-    ctx.lineWidth=17;
+    ctx.lineWidth=7;
     ctx.strokeStyle = asteroids.color;
     ctx.beginPath();
     ctx.arc(0,0,asteroids.x, 0, 2*Math.PI,true);
     ctx.stroke();
+    ctx.font = "20px Montserrat";
     ctx.fillText(asteroids.name,asteroids.x+10,0); //+3 to lekki odstêp
     ctx.lineWidth=1;
      
@@ -258,21 +259,25 @@ function setDefaultDate(){
 
 function zoomin()
 {
-    clearEverything();
-    ctx.scale(2,2);
-    scale*=2;
-    console.log("Skala: " + scale);
-    draw();
+    if(scale < 4) {
+        clearEverything();
+        ctx.scale(2,2);
+        scale*=2;
+        console.log("Skala: " + scale);
+        draw();
+    }
 }
 
 function zoomout()
 {
-
-    clearEverything();
-    ctx.scale(1/2, 1/2);
-    scale/=2;
-    console.log("Skala: " + scale);
-    draw();
+    if(scale > 1/4)
+    {
+        clearEverything();
+        ctx.scale(1/2, 1/2);
+        scale/=2;
+        console.log("Skala: " + scale);
+        draw();
+    }
 }
 
 function hasSameColor(color, object) {

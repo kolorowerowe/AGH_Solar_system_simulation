@@ -41,7 +41,7 @@ let mercury = {
             "<b>Okres orbity gwiazdowej:</b> 0.2408467 lat" + "<br />" +
             "<b>Grawitacja równikowa:</b> 3.70 m/s^2 " + "<br />" +
             "<b>Prędkość ucieczki:</b> 4.25 km/s " + "<br />"+
-            "<img src='https://images-assets.nasa.gov/image/PIA11406/PIA11406~orig.jpg' height='300' width='300' >"
+            "<img src='src/img/merkury.jpg' height='200' width='300' >"
 
 };
 let venus = {
@@ -64,7 +64,7 @@ let venus = {
             "<b>Okres orbity gwiazdowej:</b> 0.61519726 lat" + "<br />" +
             "<b>Grawitacja równikowa:</b> 8.87 "+" m/s<sup>2</sup>" + "<br />" +
             "<b>Prędkość ucieczki:</b> 10.36 km/s" + "<br />"+
-            "<img src='https://images-assets.nasa.gov/image/PIA00271/PIA00271~orig.jpg' height='300' width='300' >"
+            "<img src='src/img/venus.jpg' height='300' width='300' >"
 };
 let earth = {
     "name": "Earth",
@@ -86,7 +86,7 @@ let earth = {
             "<b>Okres orbity gwiazdowej:</b> 1.0000174 lat" + "<br />" +
             "<b>Grawitacja równikowa:</b> 9.80 "+" m/s<sup>2</sup>" + "<br />" +
             "<b>Prędkość ucieczki:</b> 11.19 km/s" + "<br />"+
-            "<img src='https://images-assets.nasa.gov/image/PIA18033/PIA18033~orig.jpg' height='300' width='300' >"
+            "<img src='src/img/earth.jpg' height='300' width='300' >"
 };
 let mars = {
     "name": "Mars",
@@ -108,7 +108,7 @@ let mars = {
             "<b>Okres orbity gwiazdowej:</b> 1.8808476 lat" + "<br />" +
             "<b>Grawitacja równikowa:</b> 3.71 "+" m/s<sup>2</sup>" + "<br />" +
             "<b>Prędkość ucieczki:</b> 5.03 km/s" + "<br />"+
-            "<img src='https://images-assets.nasa.gov/image/PIA04591/PIA04591~orig.jpg' height='300' width='300' >"
+            "<img src='src/img/mars.png' height='300' width='300' >"
 };
 
 
@@ -126,7 +126,7 @@ let asteroids = {
             "<b>Odległość od Słońca:</b> 1.7AU - 4AU (większość ciał 2AU-3AU)" + "<br />" +
             "<b>Masa całk.:</b> 3.3 ± 0.3 x10<sup>21</sup> kg" + "<br />" +
             "<b> Największe obiekty:</b> Ceres, Westa, Pallas i Hygiea <br>" +
-            "<img src='https://images-assets.nasa.gov/image/PIA04591/PIA04591~orig.jpg' height='300' width='300' >"
+            "<img src='src/img/aster.jpg' height='300' width='300' >"
 };
 
 let jupiter = {
@@ -149,7 +149,7 @@ let jupiter = {
             "<b>Okres orbity gwiazdowej:</b> 11.862615 lat" + "<br />" +
             "<b>Grawitacja równikowa:</b> 24.79"+" m/s<sup>2</sup>" + "<br />" +
             "<b>Prędkość ucieczki:</b> 60.20 km/s" + "<br />"+
-            "<img src='https://images-assets.nasa.gov/image/PIA00343/PIA00343~orig.jpg' height='300' width='300' >"
+            "<img src='src/img/jupiter.jpg' height='300' width='300' >"
 };
 
 let saturn = {
@@ -172,19 +172,19 @@ let saturn = {
             "<b>Okres orbity gwiazdowej:</b> 29.447498 lat" + "<br />" +
             "<b>Grawitacja równikowa:</b> 10.44 "+" m/s<sup>2</sup>" + "<br />" +
             "<b>Prędkość ucieczki:</b> 36.09 km/s" + "<br />"+
-            "<img src='https://images-assets.nasa.gov/image/PIA04913/PIA04913~orig.jpg' height='300' width='300' >"
+            "<img src='src/img/saturn.jpg' height='200' width='300' >"
 };
 let uranus = {
     "name": "Uranus",
     "radius": 51118*radius_scale/2,
-    "color": "#7755FF",
+    "color": "#95E0FF",
     "circle_time": 30707,
     "spin_time": 17,
     "initx": distance_scale*19.1913, //potrzebne do resetu
     "x": 0,
     "init_rotate": 330/360*2*3.14,
     "rotate": 0,
-    "info": "<b>Planeta:</b> <span style=\"color: #7755FF; font-size: 40px;\"> Uranus </span>" + "<br />" +
+    "info": "<b>Planeta:</b> <span style=\"color: #95E0FF; font-size: 40px;\"> Uranus </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
             "<b>Promień równikowy:</b> 25559 ± 4 km" + "<br />" +
             "<b>Średni promień:</b> 25362 ± 7 km" + "<br />" +
@@ -194,19 +194,19 @@ let uranus = {
             "<b>Okres orbity gwiazdowej:</b> 84.016846 lat" + "<br />" +
             "<b>Grawitacja równikowa:</b> 8.87 "+" m/s<sup>2</sup>" + "<br />" +
             "<b>Prędkość ucieczki:</b> 21.38 km/s" + "<br />"+
-            "<img src='https://images-assets.nasa.gov/image/PIA01391/PIA01391~orig.jpg' height='300' width='300' >"
+            "<img src='src/img/uranus.jpg' height='300' width='300' >"
 };
 let neptune = {
     "name": "Naptune",
     "radius": 49528*radius_scale/2,
-    "color": "#95E0FF",
+    "color": "#7755FF",
     "circle_time": 60223,
     "spin_time": 16,
     "initx": distance_scale*30.0690, //potrzebne do resetu
     "x": 0,
     "init_rotate": 20/360*2*3.14,
     "rotate": 0,
-    "info": "<b>Planeta:</b> <span style=\"color: #95E0FF; font-size: 40px;\"> Neptune </span>" + "<br />" +
+    "info": "<b>Planeta:</b> <span style=\"color: #7755FF; font-size: 40px;\"> Neptune </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
             "<b>Promień równikowy:</b> 24764 ± 15 km" + "<br />" +
             "<b>Średni promień:</b> 24622 ± 19 km" + "<br />" +
@@ -216,7 +216,7 @@ let neptune = {
             "<b>Okres orbity gwiazdowej:</b> 164.79132 lat" + "<br />" +
             "<b>Grawitacja równikowa:</b> 11.15 "+" m/s<sup>2</sup>" + "<br />" +
             "<b>Prędkość ucieczki:</b> 23.56 km/s" + "<br />"+
-            "<img src='https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg' height='300' width='300' >"
+            "<img src='src/img/neptune.jpg' height='300' width='300' >"
 };
 
 //link do danych umieścić w dokumentacji
