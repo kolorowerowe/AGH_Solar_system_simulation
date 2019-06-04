@@ -126,7 +126,7 @@ let asteroids = {
             "<b>Odległość od Słońca:</b> 1.7AU - 4AU (większość ciał 2AU-3AU)" + "<br />" +
             "<b>Masa całk.:</b> 3.3 ± 0.3 x10<sup>21</sup> kg" + "<br />" +
             "<b> Największe obiekty:</b> Ceres, Westa, Pallas i Hygiea <br>" +
-            "<img src='src/img/aster.jpg' height='300' width='300' >"
+            "<img src='src/img/aster.jpg' height='200' width='380' >"
 };
 
 let jupiter = {
@@ -197,7 +197,7 @@ let uranus = {
             "<img src='src/img/uranus.jpg' height='300' width='300' >"
 };
 let neptune = {
-    "name": "Naptune",
+    "name": "Neptune",
     "radius": 49528*radius_scale/2,
     "color": "#7755FF",
     "circle_time": 60223,
