@@ -29,7 +29,7 @@ let mercury = {
     "spin_time": 58,
     "initx": distance_scale*0.3871, //potrzebne do resetu
     "x": 0,
-    "init_rotate": 20/360*2*3.14,
+    "init_rotate": 346/360*2*3.14,
     "rotate": 0,
     "info": "<b>Planeta:</b> <span style=\"color: #808080; font-size: 40px;\"> Merkury </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
@@ -52,7 +52,7 @@ let venus = {
     "spin_time": 243,
     "initx": distance_scale*0.7233, //potrzebne do resetu
     "x": 0,
-    "init_rotate": 20/360*2*3.14,
+    "init_rotate": 215/360*2*3.14,
     "rotate": 0,
     "info": "<b>Planeta:</b> <span style=\"color: #E84405; font-size: 40px;\"> Venus </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
@@ -74,7 +74,7 @@ let earth = {
     "spin_time": 24,
     "initx": distance_scale, //potrzebne do resetu
     "x": 0,
-    "init_rotate": 110/360*2*3.14,
+    "init_rotate": 76/360*2*3.14,
     "rotate": 0,
     "info": "<b>Planeta:</b> <span style=\"color: #0000FF; font-size: 40px;\"> Earth </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
@@ -96,7 +96,7 @@ let mars = {
     "spin_time": 24,
     "initx": distance_scale*1.5237, //potrzebne do resetu
     "x": 0,
-    "init_rotate": 250/360*2*3.14,
+    "init_rotate": 302/360*2*3.14,
     "rotate": 0,
     "info": "<b>Planeta:</b> <span style=\"color: #E8050E; font-size: 40px;\"> Mars </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
@@ -137,7 +137,7 @@ let jupiter = {
     "spin_time": 9,
     "initx": distance_scale*5.2034, //potrzebne do resetu
     "x": 0,
-    "init_rotate": 100/360*2*3.14,
+    "init_rotate": 78/360*2*3.14,
     "rotate": 0,
     "info": "<b>Planeta:</b><span style=\"color: #FFDE3A; font-size: 40px;\"> Jupiter </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
@@ -160,7 +160,7 @@ let saturn = {
     "spin_time": 11,
     "initx": distance_scale*9.5371, //potrzebne do resetu
     "x": 0,
-    "init_rotate": 80/360*2*3.14,
+    "init_rotate": 106/360*2*3.14,
     "rotate": 0,
     "info": "<b>Planeta:</b><span style=\"color: #EBAE53; font-size: 40px;\"> Saturn </span>\" <br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
@@ -182,7 +182,7 @@ let uranus = {
     "spin_time": 17,
     "initx": distance_scale*19.1913, //potrzebne do resetu
     "x": 0,
-    "init_rotate": 330/360*2*3.14,
+    "init_rotate": 213/360*2*3.14,
     "rotate": 0,
     "info": "<b>Planeta:</b> <span style=\"color: #95E0FF; font-size: 40px;\"> Uranus </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
@@ -204,7 +204,7 @@ let neptune = {
     "spin_time": 16,
     "initx": distance_scale*30.0690, //potrzebne do resetu
     "x": 0,
-    "init_rotate": 20/360*2*3.14,
+    "init_rotate": 167/360*2*3.14,
     "rotate": 0,
     "info": "<b>Planeta:</b> <span style=\"color: #7755FF; font-size: 40px;\"> Neptune </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +

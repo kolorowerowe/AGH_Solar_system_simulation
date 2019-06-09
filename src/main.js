@@ -5,7 +5,7 @@ var time=0;
 var scale =1;
 //month gets value from 0 to 11
 //.getTime() returns in milisec
-var date_init_ = new Date(2019, 3, 14, 12, 0, 0, 0);
+var date_init_ = new Date(2019, 5, 9, 12, 0, 0, 0);
 var date_init = date_init_.getTime();
 var date_mili = date_init;
 var running = 0; // 0 - stop, 1- running, 2 - pause
@@ -34,8 +34,11 @@ canvas.onclick = function(e) {
         if (hasSameColor(color, ob)) {
             document.getElementById("info").innerHTML = ob.info;
             clicked_planet = ob;
-            writeAngle();
             ever_clicked = true;
+            document.getElementById("button_zwin").disabled = false;
+            if (ob.name != "Asteroid belt"){
+                writeAngle();
+            }
         }
     });
 };
@@ -112,7 +115,7 @@ function reset() {
         item.x=item.initx; //pocz¹tkowe po³o¿enie
         item.rotate=item.init_rotate;
     }
-
+    scale=1;
     running = 0;
     time = 0;
     date_mili = date_init;
@@ -121,10 +124,14 @@ function reset() {
     writeDate();
     document.getElementById("time_slider").value = 1;
     document.getElementById("time_gain").innerHTML= "1x";
-    document.getElementById("info").innerHTML = "";
-    document.getElementById("obrot").innerHTML = "";
+    //document.getElementById("obrot").innerHTML = "";
+    zwinInfo();
+
+    document.getElementById("button_zoomout").disabled = false;
+    document.getElementById("button_zoomin").disabled = false;
+
     ever_clicked = false;
-    scale=1;
+
 
 }
 
@@ -265,18 +272,26 @@ function zoomin()
         scale*=2;
         console.log("Skala: " + scale);
         draw();
+        document.getElementById("button_zoomout").disabled = false;
+
+    }
+    if (scale == 4){
+        document.getElementById("button_zoomin").disabled = true;
     }
 }
 
-function zoomout()
-{
-    if(scale > 1/4)
-    {
+function zoomout() {
+    if (scale > 1 / 4) {
         clearEverything();
-        ctx.scale(1/2, 1/2);
-        scale/=2;
+        ctx.scale(1 / 2, 1 / 2);
+        scale /= 2;
         console.log("Skala: " + scale);
         draw();
+        document.getElementById("button_zoomin").disabled = false;
+
+    }
+    if (scale == 1 / 4) {
+        document.getElementById("button_zoomout").disabled = true;
     }
 }
 
@@ -297,6 +312,8 @@ var rgbToHex = function (rgb) {
 
 function zwinInfo() {
     document.getElementById("info").innerHTML="";
+    document.getElementById("button_zwin").disabled = true;
+
 }
 
 

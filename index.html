@@ -34,13 +34,13 @@
             <button onclick="pause()">Pauza</button>
             <button onclick="reset()">Reset</button>
             <br/><br/>
-            <button onclick="zoomin()">Zoom In</button>
-            <button onclick="zoomout()">Zoom Out</button>
+            <button onclick="zoomin()" id="button_zoomin">Zoom In</button>
+            <button onclick="zoomout()" id="button_zoomout">Zoom Out</button>
 
         </div> <!--panel's div -->
         <div id="planetInfo">
             <h2>Informacje o planecie </h2>
-            (kliknij na planetę) <button onclick="zwinInfo()">Zwiń informacje</button>
+            (kliknij na planetę) <button onclick="zwinInfo()" id="button_zwin" disabled>Zwiń informacje</button>
             <p id="info"></p>
         </div>
     </div> <!--container's div -->
