@@ -25,7 +25,7 @@ let mercury = {
     "name": "Mercury",
     "radius": 4879*radius_scale/2,
     "color": "#808080",
-    "circle_time": 87,
+    "circle_time": 87.969,
     "spin_time": 58,
     "initx": distance_scale*0.3871, //potrzebne do resetu
     "x": 0,
@@ -48,7 +48,7 @@ let venus = {
     "name": "Venus",
     "radius": 12104*radius_scale/2,
     "color": "#E84405",
-    "circle_time": 224,
+    "circle_time": 224.701,
     "spin_time": 243,
     "initx": distance_scale*0.7233, //potrzebne do resetu
     "x": 0,
@@ -92,7 +92,7 @@ let mars = {
     "name": "Mars",
     "radius": 6805*radius_scale/2,
     "color": "#E8050E",
-    "circle_time": 686,
+    "circle_time": 686.960,
     "spin_time": 24,
     "initx": distance_scale*1.5237, //potrzebne do resetu
     "x": 0,
@@ -133,7 +133,7 @@ let jupiter = {
     "name": "Jupiter",
     "radius": 142984*radius_scale/2,
     "color": "#FFDE3A",
-    "circle_time": 4333,
+    "circle_time": 4333.287,
     "spin_time": 9,
     "initx": distance_scale*5.2034, //potrzebne do resetu
     "x": 0,
@@ -156,7 +156,7 @@ let saturn = {
     "name": "Saturn",
     "radius": 120536*radius_scale/2,
     "color": "#EBAE53",
-    "circle_time": 10756,
+    "circle_time": 10756.2,
     "spin_time": 11,
     "initx": distance_scale*9.5371, //potrzebne do resetu
     "x": 0,
@@ -178,7 +178,7 @@ let uranus = {
     "name": "Uranus",
     "radius": 51118*radius_scale/2,
     "color": "#95E0FF",
-    "circle_time": 30707,
+    "circle_time": 30707.49,
     "spin_time": 17,
     "initx": distance_scale*19.1913, //potrzebne do resetu
     "x": 0,
@@ -200,7 +200,7 @@ let neptune = {
     "name": "Neptune",
     "radius": 49528*radius_scale/2,
     "color": "#7755FF",
-    "circle_time": 60223,
+    "circle_time": 60223.353,
     "spin_time": 16,
     "initx": distance_scale*30.0690, //potrzebne do resetu
     "x": 0,
