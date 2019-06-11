@@ -170,7 +170,7 @@ function draw()
       
       for (let item of objects)
       {
-        if(item.name !== "Sun" && item.name !== "Asteroid belt")
+        if(item.name !== "Sun" && item.name !== "Pas asteroid")
         {
           ctx.save(); //zapisz stan canvas
             let przes =0;

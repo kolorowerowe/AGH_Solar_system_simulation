@@ -22,7 +22,7 @@ let sun = {
     "img_height":15
 };
 let mercury = {
-    "name": "Mercury",
+    "name": "Merkury",
     "radius": 4879*radius_scale/2,
     "color": "#808080",
     "circle_time": 87.969,
@@ -45,7 +45,7 @@ let mercury = {
 
 };
 let venus = {
-    "name": "Venus",
+    "name": "Wenus",
     "radius": 12104*radius_scale/2,
     "color": "#E84405",
     "circle_time": 224.701,
@@ -54,7 +54,7 @@ let venus = {
     "x": 0,
     "init_rotate": 215/360*2*3.14,
     "rotate": 0,
-    "info": "<b>Planeta:</b> <span style=\"color: #E84405; font-size: 40px;\"> Venus </span>" + "<br />" +
+    "info": "<b>Planeta:</b> <span style=\"color: #E84405; font-size: 40px;\"> Wenus </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
             "<b>Promień równikowy:</b> 6051.8 ± 1.0 km" + "<br />" +
             "<b>Średni promień:</b> 6051.8 ± 1.0 km" + "<br />" +
@@ -67,7 +67,7 @@ let venus = {
             "<img src='src/img/venus.jpg' height='300' width='300' >"
 };
 let earth = {
-    "name": "Earth",
+    "name": "Ziemia",
     "radius": 12756*radius_scale/2,
     "color": "#0000FF",
     "circle_time": 365.25,
@@ -76,7 +76,7 @@ let earth = {
     "x": 0,
     "init_rotate": 76/360*2*3.14,
     "rotate": 0,
-    "info": "<b>Planeta:</b> <span style=\"color: #0000FF; font-size: 40px;\"> Earth </span>" + "<br />" +
+    "info": "<b>Planeta:</b> <span style=\"color: #0000FF; font-size: 40px;\"> Ziemia </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
             "<b>Promień równikowy:</b> 6378.1366 ± 0.0001 km" + "<br />" +
             "<b>Średni promień:</b> 6371.0084 ± 0.0001 km" + "<br />" +
@@ -113,7 +113,7 @@ let mars = {
 
 
 let asteroids = {
-    "name": "Asteroid belt",
+    "name": "Pas asteroid",
     "radius": 1*radius_scale/2,
     "color": "#DCE1EA",
     "circle_time": 100000,
@@ -122,7 +122,7 @@ let asteroids = {
     "x": 0,
     "init_rotate": 0,
     "rotate": 0,
-    "info": "<b>Obiekt:</b> <span style=\"color: #DCE1EA; font-size: 40px;\"> Asteroid belt </span>" + "<br />" +
+    "info": "<b>Obiekt:</b> <span style=\"color: #DCE1EA; font-size: 40px;\"> Pas asteroid </span>" + "<br />" +
             "<b>Odległość od Słońca:</b> 1.7AU - 4AU (większość ciał 2AU-3AU)" + "<br />" +
             "<b>Masa całk.:</b> 3.3 ± 0.3 x10<sup>21</sup> kg" + "<br />" +
             "<b> Największe obiekty:</b> Ceres, Westa, Pallas i Hygiea <br>" +
@@ -130,7 +130,7 @@ let asteroids = {
 };
 
 let jupiter = {
-    "name": "Jupiter",
+    "name": "Jowisz",
     "radius": 142984*radius_scale/2,
     "color": "#FFDE3A",
     "circle_time": 4333.287,
@@ -139,7 +139,7 @@ let jupiter = {
     "x": 0,
     "init_rotate": 78/360*2*3.14,
     "rotate": 0,
-    "info": "<b>Planeta:</b><span style=\"color: #FFDE3A; font-size: 40px;\"> Jupiter </span>" + "<br />" +
+    "info": "<b>Planeta:</b><span style=\"color: #FFDE3A; font-size: 40px;\"> Jowisz </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
             "<b>Promień równikowy:</b> 71492 ± 4 km" + "<br />" +
             "<b>Średni promień:</b> 69911 ± 6 km" + "<br />" +
@@ -175,7 +175,7 @@ let saturn = {
             "<img src='src/img/saturn.jpg' height='200' width='300' >"
 };
 let uranus = {
-    "name": "Uranus",
+    "name": "Uran",
     "radius": 51118*radius_scale/2,
     "color": "#95E0FF",
     "circle_time": 30707.49,
@@ -184,7 +184,7 @@ let uranus = {
     "x": 0,
     "init_rotate": 213/360*2*3.14,
     "rotate": 0,
-    "info": "<b>Planeta:</b> <span style=\"color: #95E0FF; font-size: 40px;\"> Uranus </span>" + "<br />" +
+    "info": "<b>Planeta:</b> <span style=\"color: #95E0FF; font-size: 40px;\"> Uran </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
             "<b>Promień równikowy:</b> 25559 ± 4 km" + "<br />" +
             "<b>Średni promień:</b> 25362 ± 7 km" + "<br />" +
@@ -197,7 +197,7 @@ let uranus = {
             "<img src='src/img/uranus.jpg' height='300' width='300' >"
 };
 let neptune = {
-    "name": "Neptune",
+    "name": "Neptun",
     "radius": 49528*radius_scale/2,
     "color": "#7755FF",
     "circle_time": 60223.353,
@@ -206,7 +206,7 @@ let neptune = {
     "x": 0,
     "init_rotate": 167/360*2*3.14,
     "rotate": 0,
-    "info": "<b>Planeta:</b> <span style=\"color: #7755FF; font-size: 40px;\"> Neptune </span>" + "<br />" +
+    "info": "<b>Planeta:</b> <span style=\"color: #7755FF; font-size: 40px;\"> Neptun </span>" + "<br />" +
             "<b>Aktualny obrót:</b> " + "<div id='obrot'></div>" + "<br />" +
             "<b>Promień równikowy:</b> 24764 ± 15 km" + "<br />" +
             "<b>Średni promień:</b> 24622 ± 19 km" + "<br />" +
